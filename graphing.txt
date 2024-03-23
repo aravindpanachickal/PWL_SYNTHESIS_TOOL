@@ -1,0 +1,12 @@
+voltage = v
+timeScale = nS
+timeStep = 100
+riseTime = 0.1
+fallTime = 0.1
+initialVoltage = 0
+go 1
+v 5
+go 10
+v 0
+go 1
+end  
