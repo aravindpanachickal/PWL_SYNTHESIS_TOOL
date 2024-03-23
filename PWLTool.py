@@ -22,6 +22,19 @@ def plot_the_graph():
     plt.grid(True)
     plt.show()
 
+def pwl_formatter():
+    pwl = "pwl( "
+    for i in range(len(time)):
+        pwl_update = str(round(time[i],3)) + settings["timeScale"] + ", " + str(voltage[i]) + settings["voltage"]
+        if  i == len(time)-1:
+            pass
+        else:
+            pwl_update = pwl_update + ", "
+        pwl = pwl + pwl_update  
+    pwl = pwl + ")"
+    print(pwl)
+
+
 # going through the lines
 for line in lines:
     # print(line.strip())
@@ -47,6 +60,7 @@ for line in lines:
             else:
                 voltage.append(voltage[len(voltage) - 1])
                 plot_the_graph()
+            pwl_formatter()
         else:
             pass
         # print(settings)
